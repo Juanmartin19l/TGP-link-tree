@@ -1,0 +1,25 @@
+{
+  "name": "link-tree-tesoreria",
+  "version": "1.0.0",
+  "main": "links.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juanmartin19l/link-tree-tesoreria.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juanmartin19l/link-tree-tesoreria/issues"
+  },
+  "homepage": "https://github.com/Juanmartin19l/link-tree-tesoreria#readme",
+  "description": "",
+  "devDependencies": {
+    "vite": "^8.0.0"
+  }
+}

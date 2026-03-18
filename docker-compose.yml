@@ -1,0 +1,14 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_NOCODB_TOKEN: ${VITE_NOCODB_TOKEN}
+        VITE_NOCODB_BASE_URL: ${VITE_NOCODB_BASE_URL}
+        VITE_NOCODB_SOURCE_ID: ${VITE_NOCODB_SOURCE_ID}
+        VITE_NOCODB_BASE_ID: ${VITE_NOCODB_BASE_ID}
+        VITE_NOCODB_TABLE_ID: ${VITE_NOCODB_TABLE_ID}
+    expose:
+      - "3000"
+    restart: always
