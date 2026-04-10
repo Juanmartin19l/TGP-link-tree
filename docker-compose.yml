@@ -1,14 +1,26 @@
 services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    expose:
+      - "3000"
+    restart: always
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+
   web:
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        VITE_NOCODB_TOKEN: ${VITE_NOCODB_TOKEN}
-        VITE_NOCODB_BASE_URL: ${VITE_NOCODB_BASE_URL}
-        VITE_NOCODB_SOURCE_ID: ${VITE_NOCODB_SOURCE_ID}
-        VITE_NOCODB_BASE_ID: ${VITE_NOCODB_BASE_ID}
-        VITE_NOCODB_TABLE_ID: ${VITE_NOCODB_TABLE_ID}
+        VITE_BACKEND_URL: ${VITE_BACKEND_URL}
     expose:
       - "3000"
     restart: always
+    depends_on:
+      - api
